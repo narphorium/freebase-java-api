@@ -20,7 +20,7 @@ import com.narphorium.freebase.query.Query;
 
 public class QueryParser {
 	
-	private static Pattern parameterNamePattern = Pattern.compile("([\\d\\w_]+):([\\d\\w_\\/]+)");
+	private static Pattern parameterNamePattern = Pattern.compile("([\\d\\w_]+):([\\d\\w_\\/]+)(?:>|<|<=|>=|~=|\\|=)?");
 	private static Matcher parameterNameMatcher = parameterNamePattern.matcher("");
 	
 	public Query parse(String name, String queryString) {
